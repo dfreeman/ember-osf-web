@@ -9,5 +9,5 @@ export default class XAnchor extends Component {
 
     layout = layout;
 
-    @attribute href?: string;
+    @attribute href?: string = this.href;
 }
