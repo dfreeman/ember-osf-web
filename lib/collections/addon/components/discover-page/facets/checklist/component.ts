@@ -88,7 +88,7 @@ export default abstract class SearchFacetChecklist extends Base.extend({
     abstract get filterProperty(): string;
 
     @computed('allItems.[]', 'context.activeFilter.[]')
-    get items(this: SearchFacetChecklist) {
+    get items() {
         const { activeFilter } = this.context;
 
         return this.allItems

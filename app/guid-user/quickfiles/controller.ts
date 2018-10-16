@@ -136,7 +136,7 @@ export default class UserQuickfiles extends Controller {
     });
 
     @computed('allFiles.[]', 'filter', 'sort')
-    get files(this: UserQuickfiles): File[] | null {
+    get files(): File[] | null {
         const filter: string = this.get('filter');
         const sort: string = this.get('sort');
 
@@ -164,7 +164,7 @@ export default class UserQuickfiles extends Controller {
     }
 
     @computed('currentUser.currentUserId', 'user.id')
-    get canEdit(this: UserQuickfiles): boolean {
+    get canEdit(): boolean {
         const user = this.get('user');
         const userId = user && user.get('id');
         return !!userId && userId === this.get('currentUser').get('currentUserId');

@@ -30,7 +30,7 @@ export default class Home extends Controller {
     ];
 
     @computed('featuresList')
-    get features(this: Home): string[][] {
+    get features(): string[][] {
         const featuresList = this.get('featuresList');
 
         return chunkArray(featuresList, Math.ceil(featuresList.length / 2));

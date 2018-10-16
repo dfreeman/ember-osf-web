@@ -28,7 +28,7 @@ export default class GuidNodeForks extends Controller {
     node?: Node;
 
     @computed('node')
-    get nodeType(this: GuidNodeForks) {
+    get nodeType() {
         if (!this.node) {
             return;
         }

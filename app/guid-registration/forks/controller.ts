@@ -28,7 +28,7 @@ export default class GuidRegistrationForks extends Controller {
     node?: Registration;
 
     @computed('node')
-    get nodeType(this: GuidRegistrationForks) {
+    get nodeType() {
         if (!this.node) {
             return;
         }

@@ -28,7 +28,7 @@ export default class Institution extends OsfModel {
     @hasMany('registration', { inverse: 'affiliatedInstitutions' }) registrations!: DS.PromiseManyArray<Registration>;
 
     @computed('assets', 'id')
-    get logoUrl(this: Institution): string {
+    get logoUrl(): string {
         let assetsUrl = '';
         if (this.assets) {
             const { logo } = this.assets;

@@ -60,7 +60,7 @@ export default class CurrentUserService extends Service {
      * Return the currently logged-in user, or null if not logged in.
      */
     @computed('currentUserId')
-    get user(this: CurrentUserService): User | null {
+    get user(): User | null {
         if (this.currentUserId) {
             // The authenticator should have pushed the user into the store
             return this.store.peekRecord('user', this.currentUserId);

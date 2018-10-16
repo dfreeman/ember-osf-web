@@ -16,7 +16,7 @@ export default class InlineList extends Component {
     @alias('items.lastObject') last!: any;
 
     @computed('items', 'truncate')
-    get rest(this: InlineList) {
+    get rest() {
         if (this.truncate && (this.truncate < this.items.length)) {
             return this.items.slice(1, this.truncate);
         }

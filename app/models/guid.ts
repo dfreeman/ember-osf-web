@@ -17,7 +17,7 @@ export type ReferentModel = ModelRegistry[ReferentModelName];
  */
 export default class Guid extends OsfModel {
     @computed('id')
-    get referentType(this: Guid): ReferentModelName {
+    get referentType(): ReferentModelName {
         return singularize(this.links.relationships.referent.data.type) as ReferentModelName;
     }
 

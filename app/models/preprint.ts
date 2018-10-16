@@ -53,7 +53,7 @@ export default class Preprint extends OsfModel {
     @alias('links.preprint_doi') preprintDoiUrl!: string;
 
     @computed('subjects')
-    get uniqueSubjects(this: Preprint): SubjectRef[] {
+    get uniqueSubjects(): SubjectRef[] {
         if (!this.get('subjects')) {
             return [];
         }
@@ -64,7 +64,7 @@ export default class Preprint extends OsfModel {
     }
 
     @computed('license')
-    get licenseText(this: Preprint): string {
+    get licenseText(): string {
         const text: string = this.license.get('text') || '';
         const { year = '', copyright_holders = [] } = this.get('licenseRecord'); // eslint-disable-line camelcase
 

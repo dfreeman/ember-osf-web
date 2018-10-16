@@ -24,7 +24,7 @@ export default class ContributorList extends Component {
     contributors!: DS.PromiseManyArray<Contributor> & { meta: { total: number } };
 
     @computed('contributors.[]')
-    get contributorList(this: ContributorList): Contrib[] {
+    get contributorList(): Contrib[] {
         if (!this.contributors) {
             return [];
         }
@@ -47,7 +47,7 @@ export default class ContributorList extends Component {
     @alias('contributors.meta.total') numContributors!: number;
 
     @computed('contributors.meta.total', 'max')
-    get rest(this: ContributorList): number {
+    get rest(): number {
         return this.contributors.meta.total - this.max;
     }
 }
