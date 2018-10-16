@@ -20,7 +20,8 @@ import Log from './log';
 import { Permission } from './osf-model';
 import Preprint from './preprint';
 import Region from './region';
-import Registration from './registration';
+// Can't call this `Registration` until https://github.com/babel/babel/issues/8881 is fixed
+import RegistrationModel from './registration';
 import Wiki from './wiki';
 
 const Validations = buildValidations({
@@ -82,7 +83,7 @@ export default class Node extends BaseFileItem.extend(Validations, CollectableVa
     @alias('fork') isFork!: boolean;
     @attr('boolean') collection!: boolean;
     @attr('boolean') registration!: boolean;
-    @attr('boolean') public!: boolean;
+    @attr('boolean') public public!: boolean;
 
     @attr('date') dateCreated!: Date;
     @attr('date') dateModified!: Date;
@@ -120,7 +121,7 @@ export default class Node extends BaseFileItem.extend(Validations, CollectableVa
     @hasMany('file-provider', { inverse: 'node' }) files!: DS.PromiseManyArray<FileProvider>;
 
     @hasMany('node', { inverse: null }) linkedNodes!: DS.PromiseManyArray<Node>;
-    @hasMany('registration', { inverse: 'registeredFrom' }) registrations!: DS.PromiseManyArray<Registration>;
+    @hasMany('registration', { inverse: 'registeredFrom' }) registrations!: DS.PromiseManyArray<RegistrationModel>;
 
     @hasMany('draft-registration', { inverse: 'branchedFrom' })
     draftRegistrations!: DS.PromiseManyArray<DraftRegistration>;
