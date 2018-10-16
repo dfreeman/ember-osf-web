@@ -426,7 +426,7 @@ module('Registries | Integration | discover', hooks => {
 
         const analytics = engine.lookup('service:analytics');
         analytics.actions.click = function(this: Analytics, ...args: any[]) {
-            (this.click as any)(...args);
+            this.click(...args);
             const event = args[args.length - 1] as MouseEvent;
 
             // Prevent redirects from being followed
