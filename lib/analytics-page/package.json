@@ -5,6 +5,7 @@
     "ember-engine"
   ],
   "dependencies": {
+    "@ember-decorators/babel-transforms": "*",
     "ember-bootstrap": "*",
     "ember-truth-helpers": "*",
     "ember-component-attributes": "*",
@@ -17,6 +18,7 @@
     "ember-concurrency": "*",
     "ember-css-modules": "*",
     "ember-css-modules-sass": "*",
+    "ember-decorators": "*",
     "ember-i18n": "*",
     "ember-i18n-inject": "*",
     "ember-font-awesome": "*",

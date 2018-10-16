@@ -5,6 +5,7 @@
     "ember-engine"
   ],
   "dependencies": {
+    "@ember-decorators/babel-transforms": "*",
     "ember-bootstrap": "*",
     "ember-cli-addon-docs": "*",
     "ember-cli-addon-docs-typedoc": "*",
@@ -16,6 +17,7 @@
     "ember-cp-validations": "*",
     "ember-css-modules": "*",
     "ember-css-modules-sass": "*",
+    "ember-decorators": "*",
     "ember-font-awesome": "*",
     "ember-tag-input": "*"
   },
